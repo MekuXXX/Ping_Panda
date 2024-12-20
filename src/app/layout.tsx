@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn(inter.variable, eb_garamond.variable)}>
-      <body className="font-sans bg-brand-50 text-brand-950 antialiased">
+      <body className="font-sans bg-brand-50 text-brand-950 antialiased min-h-screen">
         <Providers>{children}</Providers>
         <Toaster richColors position="top-right" />
       </body>

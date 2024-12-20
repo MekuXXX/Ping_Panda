@@ -1,4 +1,4 @@
-import Header from "@/components/global/Header"
+import { LandingHeader } from "@/components/global/LandingHeader"
 import React from "react"
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 export default function LandingLayout({ children }: Props) {
   return (
     <>
-      <Header />
+      <LandingHeader />
       {children}
     </>
   )

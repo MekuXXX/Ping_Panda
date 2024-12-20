@@ -20,43 +20,44 @@ import {
   Video,
 } from "lucide-react"
 import React, { PropsWithChildren } from "react"
+import { DiscordMessage } from "./DiscordMessage"
 
 type Props = {} & PropsWithChildren
 
+const dmList = [
+  {
+    Icon: UserCircle,
+    text: "Friends",
+    tip: "2",
+  },
+  {
+    Icon: InboxIcon,
+    text: "Inbox",
+    tip: "3",
+  },
+]
+
+const friendsList = [
+  {
+    src: "/brand-asset-profile-picture.png",
+    text: "PingPanda",
+    tip: "2",
+    hovered: true,
+    active: true,
+  },
+  {
+    active: true,
+  },
+  {
+    tip: "5",
+  },
+  {
+    active: true,
+  },
+  {},
+]
+
 export default function DiscordView({ children }: Props) {
-  const dmList = [
-    {
-      Icon: UserCircle,
-      text: "Friends",
-      tip: "2",
-    },
-    {
-      Icon: InboxIcon,
-      text: "Inbox",
-      tip: "3",
-    },
-  ]
-
-  const friendsList = [
-    {
-      src: "/brand-asset-profile-picture.png",
-      text: "PingPanda",
-      tip: "3",
-      hovered: true,
-      active: true,
-    },
-    {
-      active: true,
-    },
-    {
-      tip: "5",
-    },
-    {
-      active: true,
-    },
-    {},
-  ]
-
   return (
     <div className="flex min-h-[800px] w-full max-w-[1200px] bg-discord-background text-white rounded-lg overflow-clip shadow-xl">
       <div className="hidden sm:flex w-[4.5rem] bg-[#202225] py-3 flex-col items-center">
@@ -203,3 +204,5 @@ export default function DiscordView({ children }: Props) {
     </div>
   )
 }
+
+DiscordView.Message = DiscordMessage
