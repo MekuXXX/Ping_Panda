@@ -3,7 +3,7 @@ import React, { HTMLAttributes } from "react"
 
 type Props = {} & HTMLAttributes<HTMLHeadingElement>
 
-export default function Heading({ className, ...props }: Props) {
+export function SectionHeading({ className, ...props }: Props) {
   return (
     <h1
       className={cn(

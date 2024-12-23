@@ -1,11 +1,10 @@
-import { HTTPException } from "hono/http-exception"
 import { z } from "zod"
 import { router } from "../__internals/router"
 import { publicProcedure } from "../procedures"
 
 export const postRouter = router({
   recent: publicProcedure.query(async ({ c, ctx }) => {
-    const { db } = ctx
+    const { db } = ctx as any
 
     const recentPost = await db.post.findFirst({
       orderBy: { createdAt: "desc" },
@@ -19,7 +18,7 @@ export const postRouter = router({
     .input(z.object({ name: z.string().min(1) }))
     .mutation(async ({ ctx, c, input }) => {
       const { name } = input
-      const { db } = ctx
+      const { db } = ctx as any
 
       const post = await db.post.create({
         data: { name },

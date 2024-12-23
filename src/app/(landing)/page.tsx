@@ -1,6 +1,5 @@
 import React from "react"
 import MaxWidthWrapper from "@/components/global/MaxWithWrapper"
-import Heading from "@/components/global/Heading"
 import { Check, Star } from "lucide-react"
 import { WavyBackground } from "@/components/ui/wavy-background"
 import { Highlight } from "@/components/ui/hero-highlight"
@@ -14,6 +13,8 @@ import dayjs from "dayjs"
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid"
 import { cn } from "@/lib/utils"
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials"
+import { AnimatePresence } from "framer-motion"
+import { SectionHeading } from "@/components/global/SectionHeading"
 
 type Props = {}
 
@@ -156,7 +157,7 @@ export default function HomePage({}: Props) {
           <MaxWidthWrapper className="text-center">
             <div className="relative mx-auo text-center flex flex-col items-center gap-10">
               <div>
-                <Heading>Real-Time SaaS Insights</Heading>
+                <SectionHeading>Real-Time SaaS Insights</SectionHeading>
                 <br />
                 <span className="relative font-semibold bg-gradient-to-tr from-brand-600 to-brand-900 text-transparent bg-clip-text ">
                   Delivered to Your Discord
@@ -196,8 +197,11 @@ export default function HomePage({}: Props) {
                   <div className="flex">
                     {Array(5)
                       .fill("")
-                      .map(() => (
-                        <Star className="fill-brand-600 text-brand-500 w-4 h-4 border-none" />
+                      .map((_, i) => (
+                        <Star
+                          key={i}
+                          className="fill-brand-600 text-brand-500 w-4 h-4 border-none"
+                        />
                       ))}
                   </div>
                   <p className="text-start">
@@ -224,7 +228,7 @@ export default function HomePage({}: Props) {
           <MaxWidthWrapper className="relative">
             <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:p-4 lg:rounded-2xl">
               <DiscordView>
-                <AnimatedList>
+                <AnimatedList delay={4000}>
                   <AnimatedListItem>
                     <DiscordView.Message
                       avatarSrc="/brand-asset-profile-picture.png"
@@ -290,7 +294,7 @@ export default function HomePage({}: Props) {
             <h2 className="text-center text-base/7 font-semibold text-brand-600">
               Intuitive Monitoring
             </h2>
-            <Heading>Stay ahead with real-time insights</Heading>
+            <SectionHeading>Stay ahead with real-time insights</SectionHeading>
           </div>
           <BentoGrid className="max-w-4xl mx-auto">
             {items.map((item, i) => (
@@ -311,7 +315,7 @@ export default function HomePage({}: Props) {
             <h2 className="text-center text-base/7 font-semibold text-brand-600">
               Real-World Experience
             </h2>
-            <Heading>What our customers say</Heading>
+            <SectionHeading>What our customers say</SectionHeading>
           </div>
 
           <AnimatedTestimonials testimonials={testimonials} />

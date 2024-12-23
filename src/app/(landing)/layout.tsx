@@ -1,3 +1,4 @@
+import { LandingFooter } from "@/components/global/LandingFooter"
 import { LandingHeader } from "@/components/global/LandingHeader"
 import React from "react"
 
@@ -10,6 +11,7 @@ export default function LandingLayout({ children }: Props) {
     <>
       <LandingHeader />
       {children}
+      <LandingFooter />
     </>
   )
 }

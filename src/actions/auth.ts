@@ -117,6 +117,5 @@ export async function resetPasswordAction(
 }
 
 export async function signOutAction() {
-  console.log("Hitted")
   await signOut()
 }

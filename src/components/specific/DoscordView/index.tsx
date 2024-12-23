@@ -92,8 +92,11 @@ export default function DiscordView({ children }: Props) {
 
         <div className="flex-1 overflow-y-clip pt-4">
           <div className="px-2 mb-4">
-            {dmList.map((item) => (
-              <div className="relative flex items-center tex-sm px-2 py-1.5 rounded hover:bg-[#393c43] text-[#dcddde] cursor-not-allowed">
+            {dmList.map((item, ind) => (
+              <div
+                key={ind}
+                className="relative flex items-center tex-sm px-2 py-1.5 rounded hover:bg-[#393c43] text-[#dcddde] cursor-not-allowed"
+              >
                 <item.Icon className="mr-4 size-8 text-[#b9bbbe]" />
                 <span className="font-medium text-sm">{item.text}</span>
                 {item.tip && (
@@ -112,6 +115,7 @@ export default function DiscordView({ children }: Props) {
             <div className="grid gap-2">
               {friendsList.map((item, ind) => (
                 <div
+                  key={ind}
                   className={cn(
                     "relative flex gap-2 items-center px-2 py-1.5 roundedtext-white cursor-pointer",
                     {
@@ -147,8 +151,11 @@ export default function DiscordView({ children }: Props) {
           </div>
 
           <div className="flex items-center gap-2">
-            {[Mic, Headphones, Cog].map((Icon) => (
-              <Icon className="size-5 text-[#b9bbbe] hover:text-white cursor-pointer" />
+            {[Mic, Headphones, Cog].map((Icon, ind) => (
+              <Icon
+                key={ind}
+                className="size-5 text-[#b9bbbe] hover:text-white cursor-pointer"
+              />
             ))}
           </div>
         </div>
@@ -172,8 +179,11 @@ export default function DiscordView({ children }: Props) {
 
           <div className="ml-auto flex items-center space-x-4 text-[#b9bbbe]">
             {[Phone, Video, Pin, UserCircle, Search, InboxIcon, HelpCircle].map(
-              (Icon) => (
-                <Icon className="size-5 hover:text-white cursor-not-allowed hidden sm:block" />
+              (Icon, ind) => (
+                <Icon
+                  key={ind}
+                  className="size-5 hover:text-white cursor-not-allowed hidden sm:block"
+                />
               )
             )}
           </div>
@@ -194,8 +204,11 @@ export default function DiscordView({ children }: Props) {
             />
 
             <div className="flex items-center space-x-3 mx-3 text-[#b9bbbe]">
-              {[Gift, Sticker, Smile].map((Icon) => (
-                <Icon className="size-5 hover:text-white cursor-not-allowed hidden sm:block" />
+              {[Gift, Sticker, Smile].map((Icon, ind) => (
+                <Icon
+                  key={ind}
+                  className="size-5 hover:text-white cursor-not-allowed hidden sm:block"
+                />
               ))}
             </div>
           </div>

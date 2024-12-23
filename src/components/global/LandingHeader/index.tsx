@@ -19,10 +19,9 @@ type Props = {} & NavbarProps
 export async function LandingHeader({ className, ...props }: Props) {
   const session = await auth()
   const isLoggedIn = session && !!session.user
-  console.log(isLoggedIn)
 
   return (
-    <Navbar className={cn("backdrop-blur-", className)} {...props}>
+    <Navbar className={cn("z-[999999]", className)} {...props}>
       <NavbarBrand>
         <Link href="/" className="font-semibold">
           Ping<span className="text-brand-700">Panda</span>
